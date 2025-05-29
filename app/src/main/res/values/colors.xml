@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="proz">#FFFFFF</color>
+    <color name="main">#EBE6E6</color>
+    <color name="module_board">#C2C1C1</color>
+    <color name="nav_menu_icon_color">#FF000000</color>
+    <color name="nav_menu_text_color">#FF000000</color>
+    <color name="selected_menu_background">#EEEEEE</color>
+    <color name="selected_menu_icon_text">#2196F3</color>
+
+
+</resources>

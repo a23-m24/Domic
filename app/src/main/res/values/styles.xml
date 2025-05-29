@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="nav_bar_bn">
+        <item name="contentDescription"></item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="h1">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:textSize">35dp</item>
+    </style>
+
+    <style name="h2">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">25dp</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="NavigationViewStyle" parent="Widget.MaterialComponents.NavigationView">
+        <item name="itemIconTint">@color/nav_menu_selector</item>
+        <item name="itemTextColor">@color/nav_menu_selector</item>
+        <item name="itemBackground">@drawable/nav_menu_item_background</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <!-- Добавьте эти строки для прямоугольной формы -->
+        <item name="itemShapeAppearanceOverlay">@style/NavigationViewItemShape</item>
+    </style>
+
+    <style name="NavigationViewItemShape">
+        <item name="shapeAppearance">@style/NavigationViewItemCornerSize</item>
+    </style>
+
+    <style name="NavigationViewItemCornerSize">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item> <!-- Убираем скругление углов -->
+    </style>
+
+
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/proz"
+    android:padding="32dp"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:text="DOMIC+"
+        style="@style/h1"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Имя пользователя"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+
+        android:text="demo"
+
+        android:id="@+id/usernameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/black"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textColor="@color/black" />
+
+
+    <TextView
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Пароль"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+
+        android:text="1234"
+
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:inputType="textPassword"
+        android:singleLine="true"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:id="@+id/rememberMeCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Запомнить меня"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Кнопка входа -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Войти"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Ссылка "Забыли пароль?" -->
+    <Button
+        android:id="@+id/forgotPasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Забыли пароль?"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_gravity="end"/>
+
+</LinearLayout>
