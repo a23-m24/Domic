@@ -1,13 +1,20 @@
 package com.example.domicmobile
 
+
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.domicmobile.ApiDomic.DomicApiClient
+import kotlinx.coroutines.launch
+
+
+private lateinit var client: DomicApiClient
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,40 +27,19 @@ class MainActivity : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.loginButton)
         val forgotPasswordButton = findViewById<Button>(R.id.forgotPasswordButton)
 
+        client = DomicApiClient.getInstance()
+
         loginButton.setOnClickListener {
-            val username = usernameEditText.text.toString().trim()
-            val password = passwordEditText.text.toString().trim()
-            val rememberMe = rememberMeCheckBox.isChecked
-
-
-            if(username == "demo" && password == "1234"){
-                val intent = Intent(this, MainPageActivity::class.java)
-                startActivity(intent)
-                return@setOnClickListener
-            }
-
-
-            when {
-                username.isEmpty() -> {
-                    usernameEditText.error = "Введите имя пользователя"
-                    return@setOnClickListener
-                }
-                password.isEmpty() -> {
-                    passwordEditText.error = "Введите пароль"
-                    return@setOnClickListener
-                }
-                password.length < 6 -> {
-                    passwordEditText.error = "Пароль должен содержать минимум 6 символов"
-                    return@setOnClickListener
-                }
-                else -> {
-                    // Здесь обработка логина
-                    val message = if (rememberMe) {
-                        "Вход выполнен: $username (запомнить)"
-                    } else {
-                        "Вход выполнен: $username"
-                    }
-                    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+            val username = usernameEditText.text.toString()
+            val password = passwordEditText.text.toString()
+            lifecycleScope.launch {
+                val token = client.login(username, password)
+                if (token != null) {
+                    val intent = Intent(this@MainActivity, MainPageActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Log.d("MyTag","Вход не успешен" )
+                    Toast.makeText(this@MainActivity, "Вход не удался", Toast.LENGTH_SHORT).show()
                 }
             }
         }

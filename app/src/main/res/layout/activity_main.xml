@@ -27,7 +27,7 @@
 
     <EditText
 
-        android:text="demo"
+        android:text="ParvinAliev2023"
 
         android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
 
     <EditText
 
-        android:text="1234"
+        android:text="vyaq4728"
 
         android:backgroundTint="@color/black"
         android:textColor="@color/black"

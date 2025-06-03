@@ -10,5 +10,28 @@
     <color name="selected_menu_background">#EEEEEE</color>
     <color name="selected_menu_icon_text">#2196F3</color>
 
+    <color name="primary">  #4778eb</color>
+    <color name="primary_light">  #e6edff</color>
+    <color name="primary_dark">  #3c6cdd</color>
+    <color name="inactive">  #8D8D8D</color>
+    <color name="danger">  #d02727</color>
+    <color name="success">  #009f11</color>
+    <color name="warning">  #d8af3c</color>
+    <color name="error">  #9B1C24</color>
+    <color name="alert_info">  #cfe2ff</color>
+    <color name="alert_info_text">  #052c65</color>
+    <color name="alert_success">  #d1e7dd</color>
+    <color name="alert_success_text">  #0a3622</color>
+    <color name="alert_success_light">  #e1e7d1</color>
+    <color name="alert_success_light_text">  #30360a</color>
+    <color name="alert_warning">  #fff3cd</color>
+    <color name="alert_warning_text">  #664d03</color>
+    <color name="alert_danger">  #f8d7da</color>
+    <color name="alert_danger_text">  #58151c</color>
+    <color name="text">  #000000</color>
+    <color name="secondary">  #DCDCDC</color>
+    <color name="code">  #3a3a3a</color>
+    <color name="code_background">  #f2f1f1</color>
+    <color name="text_button">  #FFFFFF</color>
 
 </resources>
