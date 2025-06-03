@@ -40,7 +40,7 @@ class MainPageActivity : AppCompatActivity() {
                 val courses = client.getStudentCourses()
                 if (deadlines.deadlines.isEmpty() == false){
                     findViewById<LinearLayout>(R.id.deadlines).visibility = View.VISIBLE
-                    for (i in deadlines.deadlines.size..0 step -1){
+                    for (i in deadlines.deadlines.size-1 downTo 0){
                         val deadlineContainer = findViewById<LinearLayout>(R.id.deadlines)
                         val deadlineText = TextView(this@MainPageActivity)
                         var value: String = deadlines.deadlines[i].date + " (" + deadlines.deadlines[i].coefficient.toString() + ") - " + deadlines.deadlines[i].course_name
@@ -55,7 +55,7 @@ class MainPageActivity : AppCompatActivity() {
                         deadlineContainer.addView(deadlineText)
                     }
                 }
-                for (i in 0..courses.courses.size){
+                for (i in 0..courses.courses.size-1){
                     val courseContainer = findViewById<LinearLayout>(R.id.courses)
                     val courseButton = Button(this@MainPageActivity, null, 0, R.style.moduleBn)
                     courseButton.text = courses.courses[i].name
