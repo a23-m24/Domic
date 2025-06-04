@@ -79,6 +79,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/shape_module"
+                tools:visibility="visible"
                 android:visibility="gone">
 
                 <TextView
@@ -86,8 +87,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ближайшие дедлайны">
+
                 </TextView>
                 <TextView
+                    style="@style/dang_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Внимание! Указаны даты, начиная с которых будут действовать штрафы">
@@ -112,34 +115,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/courses_page"
-            style="@style/pages"
-            android:orientation="vertical"
-            android:visibility="gone"
-            tools:ignore="MissingConstraints"></LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/dang_page"
-            style="@style/pages"
-            android:orientation="vertical"
-            android:visibility="gone"
-            tools:ignore="MissingConstraints">
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/settings_page"
-            style="@style/pages"
-            android:orientation="vertical"
-            android:visibility="gone"
-            tools:ignore="MissingConstraints"></LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/chat_page"
-            style="@style/pages"
-            android:orientation="vertical"
-            android:visibility="gone"
-            tools:ignore="MissingConstraints"></LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
