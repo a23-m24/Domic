@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UnitActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_main">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/shape_nav_bar"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/menu_bn"
+                style="@style/nav_bar_bn"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_menu" />
+
+            <Button
+                android:id="@+id/textView"
+                style="@style/h1"
+                android:layout_weight="1"
+                android:backgroundTint="@color/proz"
+                android:text="DOMIC+" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                style="@style/nav_bar_bn"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_widgets" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                style="@style/nav_bar_bn"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_notyf" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                style="@style/nav_bar_bn"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_account" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            style="@style/module"
+            android:background="@drawable/shape_module"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/course_name">
+
+            <TextView
+                android:id="@+id/unit_name"
+                style="@style/unitName"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text=""
+                tools:text="Учебная единица" />
+
+            <LinearLayout
+                android:id="@+id/unit_marks"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/CustomProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar2"
+                    style="@style/CustomProgressBar2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progress="0" />
+
+                <TextView
+                    android:id="@+id/max_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="end"
+                    android:text="Максимальный бал: "
+                    android:textColor="@color/module_board"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/user_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="end"
+                    android:text="Текущий бал: "
+                    android:textColor="@color/module_board"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Общий контейнер для unit_content -->
+
+        <LinearLayout
+            android:id="@+id/page_nav_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/content_container"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+        <LinearLayout
+            android:id="@+id/content_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/page_nav_container"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/course_name"
+            style="@style/h2"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            tools:text="Курс" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        android:elevation="16dp"
+        app:menu="@menu/drawer_menu"
+        app:theme="@style/NavigationViewStyle"/>
+</androidx.drawerlayout.widget.DrawerLayout>

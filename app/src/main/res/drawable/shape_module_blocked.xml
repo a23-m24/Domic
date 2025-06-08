@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/module_board" /> <!-- Background color, adjust as needed -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/module_board" /> <!-- Border color for blocked state -->
+    <corners android:radius="8dp" /> <!-- Adjust radius to match shape_module -->
+</shape>
